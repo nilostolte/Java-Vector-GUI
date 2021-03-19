@@ -54,7 +54,7 @@ kerning. The problem with the kerning in Postscript is that the kerning pairs ar
 pairs are build by hand for each font, which is a very cumbersome task, something only valid for an experimental tool, which is what it really 
 is. A more professional solution to this problem is either reading the kerning pairs from the _Opentype_ file and importing them into PostScript
 or to rewrite _/BreakIntoLines_ alltogether. Obviously the latest solution is more desirable, since the text can be output as a path instead of
-being displayed on the fly as it is currently don. In PostScript there is no difference between being displayed on the fly or to be transformed 
+being displayed on the fly as it is currently done. In PostScript there is no difference between being displayed on the fly or to be transformed 
 in path because the conversion can be done by intercepting the display commands. In Java that is not at all the case. For portability reasons,
 one must be totally independent from any display command. Since text formatting is theoretically totally independent of display characteristics,
 such as color, etc., because it is essentially only a question of scaling and translating Glyphs, this can be done with `Path2D.Float` paths,

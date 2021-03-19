@@ -60,3 +60,14 @@ one must be totally independent from any display command. Since text formatting 
 such as color, etc., because it is essentially only a question of scaling and translating Glyphs, this can be done with `Path2D.Float` paths,
 which is the metalanguage defining all shapes in this project.
 
+## Paths As A GUI Design Metalanguage
+
+The common denominator in all elements of the this project is the use of paths (`Path2D.Float`, in Java) for their definition. As cited previously,
+paths are what actually define `Shapes` in Java. In Java, `Shapes`, therefore also paths, can be displayed directly. Since paths are merely 
+declarative static entities, they are actually only data, which share many similarities with PDF, although PDF has some programming
+commands. This approach for designing and creating GUI is not something conceptually new, since it is the base of Quartz (https://en.wikipedia.org/wiki/Quartz_(graphics_layer)), which is what is behind the Core Graphics framework in Apple's macOS operating system. It is possible that the intrinsic vector graphics features in Java awt (path rendering, vector fonts, etc.) might be a part of NeWs (https://en.wikipedia.org/wiki/NeWS), a vector graphics Windowing System developed by Sun Microsystems, the same company that created Java (https://en.wikipedia.org/wiki/Java_(programming_language)). At least, _awt_ vector graphics have strong ressemblance to NeWs and to PostScript (https://en.wikipedia.org/wiki/PostScript).
+
+The difference with the approach in this project is that Java vector graphics in _awt_ is a much higher level feature than Quartz, since it is dealt
+at programming language level, not at operating system level. This opens the possibility of using this same abstraction in other programming
+languages such as in C++. Please see the discussion at https://github.com/nilostolte/ClockWidget#vector-graphics-for-gui-programming.
+

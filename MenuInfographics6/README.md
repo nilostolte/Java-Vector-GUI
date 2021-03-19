@@ -40,7 +40,23 @@ https://github.com/nilostolte/ClockWidget#clockwidget
 
 All texts are vectorized and stored as `Path2D.Float` as well. They actually take most of the space of the whole program. The advantage is that they
 have been generated automatically. The item numbers use the font _Confortaa-Bold_. This font is read with _Opentype.js_ and converted to a 
-propietary compact font format generated automatically by a tool I developed in JavaScript. Another tool uses this compact font, which contains 
-Glyphs, their sizes and the respectives _"kerning pairs"_, to convert all Strings to Java `Path2D.Float` paths. Another font processed this way
-is _MyriadPro-Bold_
+proprietary compact font format generated automatically by a tool I developed in JavaScript. Another tool uses this compact font, which contains 
+Glyphs, their sizes and the respectives _"kerning pairs"_, to convert all Strings to Java `Path2D.Float` paths. Another font processed in this way
+is _MyriadPro-Bold_, that was used for the items titles. These compact fonts are robust and enjoy the higher quality of PostScript fonts in
+_Opentype_ files. The _kerning pairs_, in particular, are of much higher quality and more exaustive than in _Truetype_ fonts. Another advantage of 
+PostScript fonts is that they are defined with cubic bezier curves which are much smoother and more compact than _Truetype_ quadratic bezier curves. 
+
+The description of the items, which uses _MyriadPro-Regular_ font, is processed by a tool called _/BreakIntoLines_. The project 𝝅<i><b> Vector 
+GUI for Android and Java</b></i>, where all these tools have been developed, was firstly developed as a _prototype_ in Postscript language. 
+This is an on going project and some of the tools are still only coded in the prototype, and are not yet in their final form. One of these 
+tools, _/BreakIntoLines_, is still coded in PostScript. It is a complex tool that breaks long texts into lines with right justification and 
+kerning. The problem with the kerning in Postscript is that the kerning pairs are encoded and cannot be accessed. At this moment the kerning 
+pairs are build by hand for each font, which is a very cumbersome task, something only valid for an experimental tool, which is what it really 
+is. A more professional solution to this problem is either reading the kerning pairs from the _Opentype_ file and importing them into PostScript
+or to rewrite _/BreakIntoLines_ alltogether. Obviously the latest solution is more desirable, since the text can be output as a path instead of
+being displayed on the fly as it is currently don. In PostScript there is no difference between being displayed on the fly or to be transformed 
+in path because the conversion can be done by intercepting the display commands. In Java that is not at all the case. For portability reasons,
+one must be totally independent from any display command. Since text formatting is theoretically totally independent of display characteristics,
+such as color, etc., because it is essentially only a question of scaling and translating Glyphs, this can be done with `Path2D.Float` paths,
+which is the metalanguage defining all shapes in this project.
 

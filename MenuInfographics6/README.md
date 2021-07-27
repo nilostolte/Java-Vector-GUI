@@ -68,8 +68,8 @@ commands. This approach for designing and creating GUI is not something conceptu
 
 The difference with the approach in this project is that Java vector graphics in _awt_ is a much higher level feature than Quartz, since it is dealt
 at programming language level, not at operating system level. This opens the possibility of using this same abstraction in other programming
-languages such as in C++. Please see [this discussion](https://github.com/nilostolte/ClockWidget#vector-graphics-for-gui-programming). _OpenVG_ and
-_NanoVG_ seem to be huge steps in the good direction. 
+languages such as in C++ or Golang. Please see [this discussion](https://github.com/nilostolte/ClockWidget#vector-graphics-for-gui-programming). _OpenVG_ and
+_NanoVG_ seem to be huge steps in the good direction. However Golang also has a library to use vector graphics primitives which appear to be much less cumbersome to use than in C++.
 
 Standardized software <i>APIs</i> like these are pioneering an imminent urge for non-propieritary public domain standards for hardware accelerated
 vector graphics to allow rich, creative and complex GUI.

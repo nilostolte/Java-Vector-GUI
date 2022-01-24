@@ -74,6 +74,6 @@ _NanoVG_ seem to be huge steps in the good direction. However Golang also has a 
 Standardized software <i>APIs</i> like these are pioneering an imminent urge for non-propieritary public domain standards for hardware accelerated
 vector graphics to allow rich, creative and complex GUI.
 
-What is a pitty is that the numerous design tools nowadays have proprietary storage formats. Also, the de facto current standard file format for
+What is a pity is that the numerous design tools nowadays have proprietary storage formats. Also, the de facto current standard file format for
 documents and vector information, PDF, is too complex for generic use. This format, which is able to represent anything, is not the expected 
 silver bullet. On the other hand, SVG failed dramatically to bring vector graphics standardization to everyday applications.
